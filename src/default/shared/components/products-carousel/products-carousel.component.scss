@@ -1,0 +1,25 @@
+.swiper-container{
+    padding: 16px 2px 2px 2px;
+    .swiper-slide{
+        text-align: center;
+       // margin-right: 10px !important;
+    }
+}
+.swiper-button-next.swiper-button-disabled, 
+.swiper-button-prev.swiper-button-disabled{
+    pointer-events: auto;
+}
+
+.star {
+    font-size: 1.5rem;
+    color: #b0c4de;
+}
+.filled {
+    color: #ffdc1c;
+}
+.bad {
+    color: #deb0b0;
+}
+.filled.bad {
+    color: #ff1e1e;
+}

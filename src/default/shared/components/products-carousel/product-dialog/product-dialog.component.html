@@ -1,0 +1,39 @@
+<div class="close-btn-outer">
+    <button mat-mini-fab color="warn" (click)="close()"><mat-icon>close</mat-icon></button>
+</div>
+<div mat-dialog-content>
+    <div fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-sm="50"> 
+            <div class="swiper-container h-100" [swiper]="config">
+                <div class="swiper-wrapper">
+                    <div *ngIf="product.Images as image" class="swiper-slide">
+                        <img [attr.data-src]="imagePath + '?width=573&height=573&path=' + image.containerName + '&name=' + image.image" class="swiper-lazy"/>
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                    <div *ngIf="product.image as image" class="swiper-slide">
+                        <img [attr.data-src]="imagePath + '?width=573&height=573&path=' + image.containerName + '&name=' + image.image" class="swiper-lazy"/>
+                        <div class="swiper-lazy-preloader"></div>
+                    </div>
+                </div>
+                <button mat-icon-button class="swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
+                <button mat-icon-button class="swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button>
+            </div>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="50" ngClass.gt-sm="px-2 m-0" ngClass.sm="mt-2" ngClass.xs="mt-2"> 
+            <h2>{{product.name}}</h2>
+            <div class="py-1 lh">
+                <p><span class="text-muted fw-500">Category: </span><span>{{product.name }}</span></p>
+                <p><span class="text-muted fw-500">Availibility: </span><span>{{ (product.availibilityCount > 0) ? 'In stock':'Unavailable'}}</span></p>
+            </div>                 
+            <div class="py-1">
+            </div>
+            <p class="py-1 text-muted lh">{{product.description}}</p>
+            <div fxLayoutAlign="end center" class="text-muted">                 
+                 <button [mat-dialog-close]="product" mat-icon-button matTooltip="View full details"><mat-icon>arrow_forward</mat-icon></button>               
+            </div>              
+            <div class="divider"></div>
+            <h2 class="mt-2 new-price">{{product.price | currency:'INR':'symbol-narrow'}}</h2>
+            <app-controls [product]="product" [type]="'detail'"></app-controls>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,79 @@
+<mat-card fxLayout="row wrap" fxLayoutAlign="space-around">
+    <div fxFlex="100" fxFlex.gt-xs="33.3">
+        <div fxLayout="column" fxLayoutAlign="center center" class="text-center">
+            <mat-icon color="primary" class="mat-icon-lg">home</mat-icon>
+            <h3 class="primary-text py-1">{{'contact.ADDRESS'|translate}}</h3>
+            <span class="text-muted">{{(listSandbox.settingDetail$ | async)?.storeAddress}}</span>
+        </div>
+    </div>
+    <div fxFlex="100" fxFlex.gt-xs="33.3" ngClass.xs="mt-2">
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <mat-icon color="primary" class="mat-icon-lg">call</mat-icon>
+            <h3 class="primary-text py-1">{{'contact.PHONES'|translate}}</h3>
+            <span class="text-muted">{{(listSandbox.settingDetail$ | async)?.storeTelephone}}</span>
+        </div>
+    </div>
+    <div fxFlex="100" fxFlex.gt-xs="33.3" ngClass.xs="mt-2">
+        <div fxLayout="column" fxLayoutAlign="center center">
+            <mat-icon color="primary" class="mat-icon-lg">mail_outline</mat-icon>
+            <h3 class="primary-text py-1">{{'contact.E-MAIL'|translate}}</h3>
+            <span class="text-muted">{{(listSandbox.settingDetail$ | async)?.storeEmail}}</span>
+        </div>
+    </div>
+    <div class="divider w-100 mt-2"></div>
+    <h3 class="w-100 text-center py-2">{{'contact.CONTACTUS'|translate}}</h3>
+
+    <form [formGroup]="contactForm" (ngSubmit)="onContactFormSubmit(contactForm.value)" fxLayout="row wrap">
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-form-field
+                    class="w-100"
+                    [ngClass]="{'validationcolor':((contactForm.controls.name.errors?.required)&&(submitted))}">
+                <input
+                        matInput placeholder="{{'contact.Name'|translate}}"
+                        formControlName="name"
+                        required>
+                <mat-error *ngIf="contactForm.controls['name'].errors?.required && submitted">{{'Error.NameIsRequired'|translate}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-form-field
+                    class="w-100"
+                    [ngClass]="{'validationcolor':((contactForm.controls.email.errors?.required)&&(submitted))}">
+                <input
+                        matInput placeholder="{{'contact.Email'|translate}}"
+                        formControlName="email"
+                        required>
+                <mat-error *ngIf="contactForm.controls['email'].errors?.required && submitted">{{'Error.EmailIsRequired'|translate}}</mat-error>
+                <mat-error *ngIf="contactForm.controls['email'].hasError('invalidEmail') && submitted">{{'Error.InvalidEmailAddress'|translate}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="100" fxFlex.gt-sm="33.3" class="px-1" ngClass.sm="mt-1" ngClass.xs="mt-1">
+            <mat-form-field
+                    class="w-100"
+                    [ngClass]="{'validationcolor':((contactForm.controls.phone.errors?.required)&&(submitted))}">
+                <input
+                        matInput placeholder="{{'contact.Phone'|translate}}"
+                        formControlName="phone"
+                        maxlength="15"
+                        appOnlyNumber
+                        required>
+                <mat-error *ngIf="contactForm.controls['phone'].errors?.required && submitted">{{'Error.PhoneIsRequired'|translate}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div fxFlex="100" class="px-1 mt-1">
+            <mat-form-field
+                    class="w-100"
+                    [ngClass]="{'validationcolor':((contactForm.controls.message.errors?.required)&&(submitted))}">
+                <input
+                        matInput placeholder="{{'contact.Message'|translate}}"
+                        formControlName="message"
+                        required>
+                <mat-error *ngIf="contactForm.controls['message'].errors?.required && submitted">{{'Error.MessageIsRequired'|translate}}</mat-error>
+            </mat-form-field>
+        </div>
+        <div class="w-100 py-2 text-center">
+            <button mat-raised-button color="primary" type="submit">{{'contact.Submit'|translate}}</button>
+        </div>
+    </form>
+
+</mat-card>

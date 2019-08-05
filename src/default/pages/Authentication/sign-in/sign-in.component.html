@@ -1,0 +1,29 @@
+<!--<div fxFlex="100"  class="p-2">-->
+<h2 class="text-muted text-center">{{'authentication.SignIn.'|translate}}</h2>
+<form [formGroup]="loginForm" novalidate>
+    <mat-form-field class="w-100 mt-2" [ngClass]="{'validationcolor':
+    (loginForm.controls.email.hasError('required') && submitted)}">
+        <input matInput placeholder="{{'authentication.Email'|translate}}" formControlName="email">
+        <mat-error *ngIf="loginForm.controls['email'].hasError('required') && submitted">{{'Error.EmailIsRequired'|translate}}</mat-error>
+        <mat-error *ngIf="loginForm.controls['email'].hasError('invalidEmail') && submitted">{{'Error.InvalidEmailAddress'|translate}}</mat-error>
+    </mat-form-field>
+    <mat-form-field class="w-100 mt-1" [ngClass]="{'validationcolor':
+    (loginForm.controls.password.hasError('required') && submitted)}">
+        <input matInput placeholder="{{'authentication.Password'|translate}}" formControlName="password" type="password">
+        <mat-error *ngIf="loginForm.controls['password'].hasError('required') && submitted">{{'Error.PasswordisRequired'|translate}}</mat-error>
+        <mat-error *ngIf="loginForm.controls['password'].hasError('minlength') && submitted">{{'Error.PasswordLong'|translate}}
+        </mat-error>
+    </mat-form-field>
+    <div class="text-center mt-2">
+        <button mat-fab color="primary" class="mat-elevation-z6" (click)="onLoginFormSubmit(loginForm.value)">
+            <mat-icon>exit_to_app</mat-icon>
+        </button>
+    </div>
+    <div fxLayout="row" fxLayoutAlign="space-between center" class="mt-2">
+        <div class="divider w-100"></div>
+        <h5 class="text-muted auth forgot" routerLink="/auth/forgot">{{'authentication.ForgottenAccount'|translate}}</h5>
+        <div class="divider w-100"></div>
+
+    </div>
+
+</form>

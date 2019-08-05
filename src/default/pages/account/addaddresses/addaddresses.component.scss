@@ -1,0 +1,39 @@
+.atype {
+  p {
+    font-weight: 400;
+  }
+  ul {
+    justify-content: space-between;
+    list-style: none;
+    li {
+      width: 50%;
+    }
+  }
+
+}
+
+.cancel {
+  margin-right: 30px;
+  border: 0px;
+  background: #fff;
+}
+
+.mat-form-field-appearance-legacy .mat-form-field-wrapper {
+  padding-bottom: 2.25em;
+}
+
+.mat-radio-container{
+  height: 14px !important;
+}
+
+.mat-radio-label-content {
+  padding-left: 10px!important;
+  padding-right: 11px !important;
+
+}
+
+input[type=number]::-webkit-inner-spin-button,
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}

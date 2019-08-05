@@ -1,0 +1,118 @@
+<div class="order-wrap">
+
+    <div class="flex order-top" *ngIf="(accountSandbox.orderHistoryDetail$ | async) as detail">
+        <h3 >{{'account.OrderId#'|translate}}{{(accountSandbox.orderHistoryDetail$ | async).orderPrefixId }}</h3>
+    </div>
+    <!-- Top -->
+
+    <div class="order-content">
+
+        <div class="flex order-row"
+             *ngIf="(!accountSandbox.orderHistoryDetailLoading$ | async) && (accountSandbox.orderHistoryDetailLoaded$ | async)">
+
+            <div class="order-col">
+                <h3>{{'account.OrderId#'|translate}}{{(accountSandbox.orderHistoryDetail$ | async).orderId }}</h3>
+                <div class="order-lft-detail">
+                    <h4>
+                        <span>{{'account.OrderDate'|translate}} </span> {{(accountSandbox.orderHistoryDetail$ |
+                        async).createdDate |
+                        date:'dd/MMM/yyyy'}} </h4>
+                    <h4><span>{{'account.OrderStatus'|translate}} </span> <span
+                            class="process">{{'account.Processing'|translate}}</span></h4>
+                </div>
+            </div>
+            <!--  -->
+
+            <div class="order-col">
+                <h3>{{'account.CustomerInformation'|translate}} </h3>
+                <div class="order-lft-detail">
+                    <h4>
+                        <span>{{'account.CustomerName'|translate}} </span> {{(accountSandbox.orderHistoryDetail$ |
+                        async).shippingFirstname + '
+                        ' +(accountSandbox.orderHistoryDetail$ | async).shippingLastname}} </h4>
+                    <h4><span>{{'account.EmailId'|translate}}  </span> <a
+                            href="javascript:void(0)">{{(accountSandbox.orderHistoryDetail$ |
+                        async).email}}</a></h4>
+                </div>
+            </div>
+            <!--  -->
+
+        </div>
+        <!--  Order Row-->
+
+        <div class="flex order-row">
+
+            <div class="order-col">
+                <h3>{{'account.ShippingAddress.'|translate}}</h3>
+                <div class="order-lft-detail">
+                    <p class="addr">{{(accountSandbox.orderHistoryDetail$ | async).shippingAddress1 + '
+                        '+(accountSandbox.orderHistoryDetail$ | async).shippingAddress2}} </p>
+                    <p class="addr">{{(accountSandbox.orderHistoryDetail$ | async).shippingCity}} ,
+                        {{(accountSandbox.orderHistoryDetail$ | async).shippingZone}}</p>
+                    <p class="phone">Phone : <span>{{(accountSandbox.orderHistoryDetail$ | async).telephone}}</span></p>
+                </div>
+            </div>
+            <!--  -->
+
+            <div class="order-col">
+                <h3>{{'account.BillingAddress..'|translate}}</h3>
+                <div class="order-lft-detail">
+                    <p class="addr">{{(accountSandbox.orderHistoryDetail$ | async).shippingAddress1 + '
+                        '+(accountSandbox.orderHistoryDetail$ | async).shippingAddress2}} </p>
+                    <p class="addr">{{(accountSandbox.orderHistoryDetail$ | async).shippingCity}} ,
+                        {{(accountSandbox.orderHistoryDetail$ | async).shippingZone}}</p>
+                    <p class="phone">Phone : <span>{{(accountSandbox.orderHistoryDetail$ | async).telephone}}</span></p>
+                </div>
+            </div>
+            <!--  -->
+
+        </div>
+        <!--  Order Row-->
+
+        <div class="order-table">
+            <h3>{{'account.ItemsList'|translate}}</h3>
+            <table class="table">
+                <tr>
+                    <th>{{'account.Products'|translate}}</th>
+                    <th width="20%" class="text-center">{{'account.Price'|translate}}</th>
+                    <th width="20%" class="text-right">{{'account.Qty'|translate}}</th>
+                    <th width="20%" class="text-right">{{'account.Total'|translate}}</th>
+                </tr>
+
+
+                <tr *ngFor="let product of (accountSandbox.orderHistoryDetail$ | async)?.productList ; let i= index">
+                    <td style="width:100%;padding: 0;" colspan="4">
+                        <table>
+                            <tr style="font-size: 16px;">
+                                <td class="text-left"> {{product.name}}</td>
+                                <td class="text-center">{{product.productPrice | currency:'INR':'symbol-narrow'}}</td>
+                                <td class="text-right">{{product.quantity}}</td>
+                                <td class="text-right">{{product.total | currency:'INR':'symbol-narrow'}}</td>
+                            </tr>
+                            <tr>
+                                <td style="width: 25%;padding: 8px;">
+
+                            </tr>
+                        </table>
+
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" class="text-right total-amount">{{'account.TotalAmount'|translate}}</td>
+                    <td class="text-right total-amount"><b>{{(accountSandbox.orderHistoryDetail$ | async).total |
+                        currency:'INR':'symbol-narrow'}}</b></td>
+                </tr>
+            </table>
+        </div>
+        <!-- Table -->
+
+        <div class="flex order-btn" *ngIf="(accountSandbox.orderHistoryDetail$ | async) as detail">
+            <a href="javascript:void(0)" [routerLink]='["/account/orders"]'>{{'account.Cancel'|translate}} </a>
+            <a href="javascript:void(0)" class="dload"
+               (click)="downloadInvoiceDetail(detail)"> {{'account.DownloadInvoice'|translate}} </a>
+        </div>
+
+    </div>
+    <!-- Order Content -->
+
+</div>

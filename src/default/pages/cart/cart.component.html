@@ -1,0 +1,106 @@
+<div *ngIf="(productControl.cartlistCount$ | async) == 0">
+    <mat-chip-list>
+        <mat-chip color="warn" selected="true">{{'cart.YOUHAVENOITEMSCART'|translate}}</mat-chip>
+    </mat-chip-list>
+    <a [routerLink]="['/']" mat-raised-button color="primary" class="mt-2">{{'cart.ContinueShopping'|translate}}</a>
+</div>
+
+<mat-card *ngIf="(productControl.cartlistCount$ | async) > 0" class="p-0">
+    <div class="mat-table cart-table">
+        <div class="mat-header-row">
+            <div class="mat-header-cell">{{'cart.Product'|translate}}</div>
+            <div class="mat-header-cell">{{'cart.Name'|translate}}</div>
+            <div class="mat-header-cell">{{'cart.Price'|translate}}</div>
+            <div class="mat-header-cell">{{'cart.Quantity'|translate}}</div>
+            <div class="mat-header-cell">{{'cart.Total'|translate}}</div>
+            <div class="mat-header-cell text-center">
+                <div class="px-1">
+                    <button mat-raised-button color="warn" (click)="clear()">{{'cart.ClearAll'|translate}}</button>
+                </div>
+            </div>
+        </div>
+        <div *ngFor="let product of productControl.cartlist$ | async ; let i= index" class="mat-row">
+            <div class="mat-cell">
+                <img
+                        *ngIf="product.image"
+                        [src]="imagePath + '?width=60&height=60&path=' +product.image.containerName + '&name=' + product.image.image"
+                        alt="">
+                <img
+                        *ngIf="product.Images "
+                        [src]="imagePath + '?width=60&height=60&path=' + product['Images'].containerName + '&name=' + product['Images'].image">
+                <div *ngIf="product.productImage && product.productImage.length > 1">
+                    <div *ngFor='let prodectDetailsImage of product.productImage'>
+                        <img *ngIf="prodectDetailsImage.defaultImage === 1"
+                             [src]="imagePath + '?width=60&height=60&path=' + prodectDetailsImage.containerName + '&name=' + prodectDetailsImage.image">
+                    </div>
+                </div>
+                <img *ngIf="product.productImage"
+                     [src]="imagePath + '?width=60&height=60&path=' + product.productImage.containerName + '&name=' + product.productImage.image"
+                     alt=''>
+            </div>
+            <div class="mat-cell"><a [routerLink]="['/products', product.productId, product.name]" class="product-name">{{product.name}}</a>
+                    <div class="availableData" *ngFor="let data of product._optionValueArray">
+                        <ng-container *ngIf="data.name!=''">
+                            {{data.name}}{{semiColon}}{{data.value}}
+                        </ng-container>
+                    </div>
+            </div>
+            <div class="mat-cell">
+                <ng-container *ngIf="(product.flag=='')&&(product.pricerefer=='')">{{product.price |
+                    currency:'INR':'symbol-narrow'}}
+                </ng-container>
+                <ng-container *ngIf="product.flag==0;else one">
+                    {{product.pricerefer | currency:'INR':'symbol-narrow'}}
+                </ng-container>
+                <ng-template #one>
+                    <span><del class="del">{{product.price | currency:'INR':'symbol-narrow'}}</del> {{product.pricerefer | currency:'INR':'symbol-narrow'}}</span>
+                </ng-template>
+            </div>
+            <div class="mat-cell">
+                <button mat-button (click)="changeCount(product, false)">
+                    <mat-icon class="icon-remove">remove</mat-icon>
+                </button>
+                {{product.productCount}}
+                <button mat-button (click)="changeCount(product, true)">
+                    <mat-icon class="icon-add">add</mat-icon>
+                </button>
+            </div>
+            <div class="mat-cell">
+                <ng-container *ngIf="(product.pricerefer!='');else priceRefer">
+                    {{(product._totalOptions + product.pricerefer) * product.productCount |
+                    currency:'INR':'symbol-narrow'}}
+                </ng-container>
+                <ng-template #priceRefer>
+                    {{(product._totalOptions + product.price) * product.productCount | currency:'INR':'symbol-narrow'}}
+                </ng-template>
+            </div>
+            <div class="mat-cell text-center">
+                <div class="p-1">
+                    <button mat-mini-fab color="warn" (click)="removeProduct(product)"
+                            matTooltip="{{'Shared.Clear'|translate}}">
+                        <mat-icon>close</mat-icon>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+        <div class="mat-row">
+            <div class="mat-cell"><a [routerLink]="['/']" mat-raised-button color="primary">{{'cart.ContinueShopping'|translate}}</a>
+            </div>
+            <div class="mat-cell"></div>
+            <div class="mat-cell"></div>
+            <div class="mat-cell text-right">
+                <div fxLayout="column" fxLayoutAlign="center end" class="grand-total px-2">
+                    <span class="new-price">{{'cart.GrandTotal'|translate}}</span>
+                </div>
+            </div>
+            <div class="mat-cell">
+                <div fxLayout="column" fxLayoutAlign="center start" class="grand-total">
+                    <span class="new-price">{{ (productControl.totalCartPrice$ | async)| currency:'INR':'symbol-narrow'}}</span>
+                </div>
+            </div>
+            <div class="mat-cell text-center"><a (click)="checkoutPage()" mat-raised-button color="primary">{{'checkout.ProceedToCheckout'|translate}}</a>
+            </div>
+        </div>
+    </div>
+</mat-card>

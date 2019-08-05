@@ -1,0 +1,27 @@
+<app-main-carousel [slides]="listSandbox.bannerList$ | async"></app-main-carousel>
+
+<div class="products-tabs featured-tabs">
+
+    <mat-tab-group mat-stretch-tabs>
+
+        <mat-tab label="Featured Product">
+            <app-products-carousel [products]="listSandbox.featuredList$ | async"></app-products-carousel>
+        </mat-tab>
+    </mat-tab-group>
+
+
+</div>
+
+<div class="products-tabs featured-tabs">
+
+    <mat-tab-group mat-stretch-tabs>
+
+        <mat-tab label="Today Deals">
+            <app-products-carousel [products]="listSandbox.todayDealList$ | async"></app-products-carousel>
+        </mat-tab>
+    </mat-tab-group>
+
+
+</div>
+
+<app-brands-carousel [brands]="listSandbox.manufacturer$ | async"></app-brands-carousel> 

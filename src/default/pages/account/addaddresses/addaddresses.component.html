@@ -1,0 +1,52 @@
+<form [formGroup]="addAddressForm" (ngSubmit)="onSubmit(addAddressForm.value)">
+  <h3></h3>
+  <div fxLayout="row wrap">
+    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Address Line 1" formControlName="address1" required>
+<!--        <mat-error *ngIf="billingForm.controls.firstName.errors?.required">First name is required</mat-error>-->
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Address Line 2" formControlName="address2" required>
+<!--        <mat-error *ngIf="billingForm.controls.lastName.errors?.required">Last name is required</mat-error>-->
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="City" formControlName="city">
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="State" formControlName="state">
+      </mat-form-field>
+    </div>
+    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1">
+      <mat-form-field class="w-100">
+        <input matInput placeholder="Pincode" formControlName="postcode">
+      </mat-form-field>
+    </div>
+
+    <div fxFlex="100" fxFlex.gt-sm="50" class="px-1 atype">
+      <label>Address Type</label>
+      <mat-radio-group formControlName="addresstype" fxLayout="column" fxLayoutGap=".25rem">
+        <mat-radio-button [value]="'1'">Home
+        </mat-radio-button>
+        <mat-radio-button [value]="'0'">Work
+        </mat-radio-button>
+      </mat-radio-group>
+    </div>
+
+    <div fxFlex="100" class="text-center mt-2 ">
+      <button style="cursor: pointer;"  (click)="cancle()" class="cancel">{{'account.Cancel'|translate}}</button>
+      <button mat-raised-button color="primary" >{{'account.SaveAddress'|translate}}</button>
+    </div>
+  </div>
+</form>
+
+
+
+
+

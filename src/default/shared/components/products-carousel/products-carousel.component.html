@@ -1,0 +1,37 @@
+<div *ngIf="products && products.length>0" class="swiper-container" [swiper]="config">
+    <div class="swiper-wrapper h-100">
+        <div *ngFor="let product of products" class="swiper-slide">
+            <mat-card class="product-item" *ngIf='product'>
+                <mat-chip-list *ngIf="product.discount">
+                    <mat-chip color="warn" selected="true">{{product.discount}}% OFF</mat-chip>
+                </mat-chip-list>
+
+                <a [routerLink]="['/products/productdetails', product.productId]" class="image-link">
+                    <img *ngIf= 'product.image' [attr.data-src]="imagePath + '?width=260&height=260&path=' + product.image.containerName + '&name=' + product.image.image" style="height:200px" class="swiper-lazy" alt=""/>
+                        <div class="swiper-lazy-preloader"></div>
+                </a>
+                <a [routerLink]="['/products/productdetails', product.productId]" class="title text-truncate">
+                    {{product.name}}
+                </a>
+                <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
+                    <div fxLayout="column" fxLayoutAlign="center start">
+                        <p class="new-price">  <ng-container *ngIf="(product.flag=='')&&(product.pricerefer=='')">{{product.price | currency:'INR':'symbol-narrow'}}</ng-container>
+                            <ng-container *ngIf="product.flag==0;else one">
+                                {{product.pricerefer | currency:'INR':'symbol-narrow'}}
+                            </ng-container>
+                            <ng-template #one>
+                                <span><del class="del">{{product.price | currency:'INR':'symbol-narrow'}}</del> {{product.pricerefer | currency:'INR':'symbol-narrow'}}</span>
+                            </ng-template></p>
+                    </div>
+                </div>
+                <div class="divider mt-2"></div>
+                <div class="icons">
+                    <app-controls [product]="product" [type]="'home'" (OpenProductDialog)="openProductDialog(product)"></app-controls>
+                </div>
+            </mat-card>
+        </div>
+    </div>
+    <button mat-mini-fab class="swiper-button-prev swipe-arrow"><mat-icon>keyboard_arrow_left</mat-icon></button>
+    <button mat-mini-fab class="swiper-button-next swipe-arrow"><mat-icon>keyboard_arrow_right</mat-icon></button>
+</div>
+

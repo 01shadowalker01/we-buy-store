@@ -1,0 +1,77 @@
+<div class="top-menu">
+
+    <a mat-button [matMenuTriggerFor]="langMenu" #langMenuTrigger="matMenuTrigger">
+        <ng-container *ngIf="languageList && languageList.length>0">
+            <img [src]="imagePath + '?width=20&height=20&path=' + languageList[index].imagePath + '&name=' +languageList[index].image">
+        </ng-container>
+        <span fxShow="false" fxShow.gt-sm class="flag-menu-title blackStyle">{{language}}</span>
+        <mat-icon class="mat-icon-sm caret blackStyle">arrow_drop_down</mat-icon>
+    </a>
+    <mat-menu #langMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown blackStyle">
+        <span (mouseleave)="langMenuTrigger.closeMenu()">
+            <button mat-menu-item *ngFor="let datas of languageList" (click)="changeLanguage(datas.name)">
+                 <span> <img [src]="imagePath + '?width=20&height=20&path=' + datas.imagePath + '&name=' +datas.image">
+                </span>  {{datas.name}}
+            </button>
+        </span>
+    </mat-menu>
+
+    <span fxShow="false" fxShow.gt-sm>
+        <a mat-button routerLink="/wishlist"><span class="blackStyle">{{'Shared.Wishlist'|translate}}
+              <ng-container *ngIf="commonSandbox.wishlistCount$ | async;else noWhishListCount">
+              ({{commonSandbox.wishlistCount$ | async}})
+         </ng-container>
+            <ng-template #noWhishListCount>
+                         (0)
+            </ng-template>
+        </span></a>
+    </span>
+
+    <a mat-button [matMenuTriggerFor]="accountMenu" #accountMenuTrigger="matMenuTrigger" class="blackStyle"
+       *ngIf="(commonSandbox.getProfile$ | async)?.firstName">
+        <mat-icon class="mat-icon-sm account-icon blackStyle">person</mat-icon>
+        <span fxShow="false" fxShow.gt-sm class="blackStyle">{{'Shared.account'|translate}}</span>
+        <mat-icon class="mat-icon-sm caret blackStyle">arrow_drop_down</mat-icon>
+    </a>
+    <a mat-button routerLink="/auth" *ngIf="!(commonSandbox.getProfile$ | async)?.firstName">
+        <mat-icon routerLink="/auth" class="mat-icon-sm account-icon blackStyle">person</mat-icon>
+        <span fxShow="false" fxShow.gt-sm class="blackStyle">{{'Shared.sign'|translate}}</span>
+    </a>
+
+    <mat-menu #accountMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown account">
+        <span>
+            <div fxLayout="row" fxLayoutAlign="space-around center" class="user-info"
+                 *ngIf="(commonSandbox.getProfile$ | async)?.firstName">
+                <img *ngIf='(commonSandbox.getProfile$ | async)?.avatarPath'
+                     [src]="imagePath + '?width=60&height=60&path=' + (commonSandbox.getProfile$ | async)?.avatarPath + '&name=' + (commonSandbox.getProfile$ | async)?.avatar"
+                     alt="user-image" width="50">
+                <img *ngIf='!(commonSandbox.getProfile$ | async)?.avatarPath' src="./assets/images/others/user.jpg"
+                     alt="user-image" width="50">
+                <p>{{(commonSandbox.getProfile$ | async)?.firstName}}<br> <small>{{(commonSandbox.getProfile$ | async)?.email}}
+                </small></p>
+            </div>
+            <div class="divider"></div>
+            <a mat-menu-item routerLink="/account">
+                <mat-icon class="mat-icon-sm">settings</mat-icon>
+                <span>{{'Shared.AccountSettings'|translate}}</span>
+            </a>
+            <a mat-menu-item routerLink="/wishlist" fxHide="false" fxHide.gt-sm>
+                <mat-icon class="mat-icon-sm">favorite</mat-icon>
+                <span>{{'Shared.Wishlist'|translate}} ({{commonSandbox.wishlistCount$ | async}})</span>
+            </a>
+            <a mat-menu-item routerLink="/">
+                <mat-icon class="mat-icon-sm">lock</mat-icon>
+                <span>{{'Shared.LockScreen'|translate}}</span>
+            </a>
+            <a mat-menu-item routerLink="/">
+                <mat-icon class="mat-icon-sm">help</mat-icon>
+                <span>{{'Shared.Help'|translate}}</span>
+            </a>
+            <div class="divider"></div>
+            <a mat-menu-item (click)="signOut()">
+                <mat-icon class="mat-icon-sm">power_settings_new</mat-icon>
+                <span>{{'Shared.SignOut'|translate}}</span>
+            </a>
+        </span>
+    </mat-menu>
+</div>
