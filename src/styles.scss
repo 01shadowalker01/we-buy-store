@@ -5,6 +5,11 @@
 @import '~swiper/dist/css/swiper.min.css';
 @import "default/theme/styles/base";
 @import "default/theme/styles/theme";
+@import "assets/fonts/Vazir/font.css";
+
+body {
+  font-family: Vazir;
+}
 
 .app.green {
     .mat-toolbar.header {
