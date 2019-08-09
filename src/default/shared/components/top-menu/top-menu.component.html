@@ -1,20 +1,20 @@
 <div class="top-menu">
 
-    <a mat-button [matMenuTriggerFor]="langMenu" #langMenuTrigger="matMenuTrigger">
+    <!-- <a mat-button [matMenuTriggerFor]="langMenu" #langMenuTrigger="matMenuTrigger">
         <ng-container *ngIf="languageList && languageList.length>0">
             <img [src]="imagePath + '?width=20&height=20&path=' + languageList[index].imagePath + '&name=' +languageList[index].image">
         </ng-container>
         <span fxShow="false" fxShow.gt-sm class="flag-menu-title blackStyle">{{language}}</span>
         <mat-icon class="mat-icon-sm caret blackStyle">arrow_drop_down</mat-icon>
-    </a>
-    <mat-menu #langMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown blackStyle">
+    </a> -->
+    <!-- <mat-menu #langMenu="matMenu" [overlapTrigger]="false" xPosition="before" class="app-dropdown blackStyle">
         <span (mouseleave)="langMenuTrigger.closeMenu()">
             <button mat-menu-item *ngFor="let datas of languageList" (click)="changeLanguage(datas.name)">
                  <span> <img [src]="imagePath + '?width=20&height=20&path=' + datas.imagePath + '&name=' +datas.image">
                 </span>  {{datas.name}}
             </button>
         </span>
-    </mat-menu>
+    </mat-menu> -->
 
     <span fxShow="false" fxShow.gt-sm>
         <a mat-button routerLink="/wishlist"><span class="blackStyle">{{'Shared.Wishlist'|translate}}
