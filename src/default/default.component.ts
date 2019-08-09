@@ -45,10 +45,10 @@ export class DefaultComponent implements OnInit , AfterViewInit {
             if (this.language === 'हिंदी') {
                 this.translate.setDefaultLang('hi');
             } else {
-                this.translate.setDefaultLang('en');
+                this.translate.setDefaultLang('fa');
             }
         } else {
-            this.translate.setDefaultLang('en');
+            this.translate.setDefaultLang('fa');
         }
     }
         // finally subscribe the event from router
