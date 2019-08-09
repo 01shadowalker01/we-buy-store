@@ -77,15 +77,19 @@ export class TopMenuComponent implements OnInit {
         }
         this.language = data;
         if (this.language === 'Hindi') {
-            localStorage.setItem('language', 'Hindi');
-            this.translate.setDefaultLang('hi');
+            localStorage.setItem("language", "Hindi");
+            this.translate.setDefaultLang("hi");
         } else if (this.language === 'English') {
-            localStorage.setItem('language', 'english');
-            this.translate.setDefaultLang('en');
+            localStorage.setItem("language", "english");
+            this.translate.setDefaultLang("en");
 
         } else if (this.language === 'French') {
-            localStorage.setItem('language', 'french');
-            this.translate.setDefaultLang('fr');
+            localStorage.setItem("language", "french");
+            this.translate.setDefaultLang("fr");
+
+        } else if (this.language === 'Persian') {
+            localStorage.setItem("language", "Persian");
+            this.translate.setDefaultLang("fa");
 
         }
     }
