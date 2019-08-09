@@ -1,0 +1,10 @@
+1) commit 2a74e55e2cf03bd39f3939095ec137eb34c71353
+Author: saeed <s>
+Date:   Fri Aug 9 16:04:05 2019 +0430
+
+    change language commented
+2) commit 3d5957b9dbe2878546525cc5ac453d32846c8eb3
+Author: saeed <s>
+Date:   Fri Aug 9 16:03:27 2019 +0430
+
+    tppest tool-bar commented
