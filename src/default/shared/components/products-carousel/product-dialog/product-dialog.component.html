@@ -32,7 +32,7 @@
                  <button [mat-dialog-close]="product" mat-icon-button matTooltip="View full details"><mat-icon>arrow_forward</mat-icon></button>               
             </div>              
             <div class="divider"></div>
-            <h2 class="mt-2 new-price">{{product.price | currency:'INR':'symbol-narrow'}}</h2>
+            <h2 class="mt-2 new-price">{{product.price | persianCurrency }}</h2>
             <app-controls [product]="product" [type]="'detail'"></app-controls>
         </div>
     </div>

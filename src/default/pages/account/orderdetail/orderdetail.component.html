@@ -85,9 +85,9 @@
                         <table>
                             <tr style="font-size: 16px;">
                                 <td class="text-left"> {{product.name}}</td>
-                                <td class="text-center">{{product.productPrice | currency:'INR':'symbol-narrow'}}</td>
+                                <td class="text-center">{{product.productPrice | persianCurrency }}</td>
                                 <td class="text-right">{{product.quantity}}</td>
-                                <td class="text-right">{{product.total | currency:'INR':'symbol-narrow'}}</td>
+                                <td class="text-right">{{product.total | persianCurrency }}</td>
                             </tr>
                             <tr>
                                 <td style="width: 25%;padding: 8px;">
@@ -100,7 +100,7 @@
                 <tr>
                     <td colspan="3" class="text-right total-amount">{{'account.TotalAmount'|translate}}</td>
                     <td class="text-right total-amount"><b>{{(accountSandbox.orderHistoryDetail$ | async).total |
-                        currency:'INR':'symbol-narrow'}}</b></td>
+                        persianCurrency }}</b></td>
                 </tr>
             </table>
         </div>

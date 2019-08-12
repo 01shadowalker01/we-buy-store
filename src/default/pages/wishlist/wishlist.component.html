@@ -30,13 +30,13 @@
             </div>
             <div class="mat-cell">
                 <ng-container
-                        *ngIf="(product.product.flag=='')&&(product.product.pricerefer =='')">{{(product.product.price) | currency:'INR':'symbol-narrow'}}</ng-container>
+                        *ngIf="(product.product.flag=='')&&(product.product.pricerefer =='')">{{(product.product.price) | persianCurrency }}</ng-container>
                 <ng-container *ngIf="(product.product.flag)==0;else one">
-                    {{(product.product.pricerefer)  | currency:'INR':'symbol-narrow'}}
+                    {{(product.product.pricerefer)  | persianCurrency }}
                 </ng-container>
                 <ng-template #one>
-                    <span><del class="del">{{(product.product.price) | currency:'INR':'symbol-narrow'}}</del>
-                        {{(product.product.pricerefer)  | currency:'INR':'symbol-narrow'}}</span>
+                    <span><del class="del">{{(product.product.price) | persianCurrency }}</del>
+                        {{(product.product.pricerefer)  | persianCurrency }}</span>
                 </ng-template>
             </div>
             <div class="mat-cell">{{product.product.dateAvailable | date:'dd/MM/yyyy'}}</div>

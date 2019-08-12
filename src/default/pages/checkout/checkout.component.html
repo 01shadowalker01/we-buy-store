@@ -143,12 +143,12 @@
                     <td class="text-right">
                         <ng-container *ngIf="(products.pricerefer);else priceRefer">
                             {{(products._totalOptions + products.pricerefer) * products.productCount |
-                            currency:'INR':'symbol-narrow'}}
+                            persianCurrency }}
                         </ng-container>
                         <ng-template #priceRefer>
-                            {{(products._totalOptions + products.price) * products.productCount | currency:'INR':'symbol-narrow'}}
+                            {{(products._totalOptions + products.price) * products.productCount | persianCurrency }}
                         </ng-template>
-                        <!--{{(products.price * products.productCount) | currency:'INR':'symbol-narrow'}}-->
+                        <!--{{(products.price * products.productCount) | persianCurrency }}-->
                         <p><a href="javascript:void(0)" (click)="removeProduct(products)"><img
                                 src="assets/images/others/bin.png"></a></p></td>
                 </tr>
@@ -156,7 +156,7 @@
                 <tr class="total-main">
                     <td class="text-right">{{'checkout.Total'|translate}}</td>
                     <td class="text-right" colspan="3" *ngIf="productControlSandbox.totalCartPrice$">
-                        {{(productControlSandbox.totalCartPrice$ | async) | currency:'INR':'symbol-narrow'}}
+                        {{(productControlSandbox.totalCartPrice$ | async) | persianCurrency }}
                     </td>
                 </tr>
             </table>

@@ -17,7 +17,7 @@
       <div class="mat-cell"><span class="order" [ngClass]="{'color': order.orderPrefixId}">{{order.orderPrefixId}}</span></div>
       <div class="mat-cell">{{order.createdDate | date: 'dd/MM/yyyy'}}</div>
       <div class="mat-cell">{{order.orderStatus.name}}</div>
-      <div class="mat-cell">{{order.total | currency:'INR':'symbol-narrow'}}</div>
+      <div class="mat-cell">{{order.total | persianCurrency }}</div>
       <div class="mat-cell">
         <div class="p-1 actions">          
           <button mat-mini-fab color="primary" matTooltip="View" [routerLink]="['/account/order-detail',order.orderId]">

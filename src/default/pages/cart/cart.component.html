@@ -47,13 +47,13 @@
             </div>
             <div class="mat-cell">
                 <ng-container *ngIf="(product.flag=='')&&(product.pricerefer=='')">{{product.price |
-                    currency:'INR':'symbol-narrow'}}
+                    persianCurrency }}
                 </ng-container>
                 <ng-container *ngIf="product.flag==0;else one">
-                    {{product.pricerefer | currency:'INR':'symbol-narrow'}}
+                    {{product.pricerefer | persianCurrency }}
                 </ng-container>
                 <ng-template #one>
-                    <span><del class="del">{{product.price | currency:'INR':'symbol-narrow'}}</del> {{product.pricerefer | currency:'INR':'symbol-narrow'}}</span>
+                    <span><del class="del">{{product.price | persianCurrency }}</del> {{product.pricerefer | persianCurrency }}</span>
                 </ng-template>
             </div>
             <div class="mat-cell">
@@ -68,10 +68,10 @@
             <div class="mat-cell">
                 <ng-container *ngIf="(product.pricerefer!='');else priceRefer">
                     {{(product._totalOptions + product.pricerefer) * product.productCount |
-                    currency:'INR':'symbol-narrow'}}
+                    persianCurrency }}
                 </ng-container>
                 <ng-template #priceRefer>
-                    {{(product._totalOptions + product.price) * product.productCount | currency:'INR':'symbol-narrow'}}
+                    {{(product._totalOptions + product.price) * product.productCount | persianCurrency }}
                 </ng-template>
             </div>
             <div class="mat-cell text-center">
@@ -96,7 +96,7 @@
             </div>
             <div class="mat-cell">
                 <div fxLayout="column" fxLayoutAlign="center start" class="grand-total">
-                    <span class="new-price">{{ (productControl.totalCartPrice$ | async)| currency:'INR':'symbol-narrow'}}</span>
+                    <span class="new-price">{{ (productControl.totalCartPrice$ | async)| persianCurrency }}</span>
                 </div>
             </div>
             <div class="mat-cell text-center"><a (click)="checkoutPage()" mat-raised-button color="primary">{{'checkout.ProceedToCheckout'|translate}}</a>

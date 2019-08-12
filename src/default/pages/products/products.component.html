@@ -63,12 +63,12 @@
                     <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
                         <div fxLayout="column" fxLayoutAlign="center start">
                             <p class="new-price">
-                                <ng-container *ngIf="(product.flag=='')&&(product.pricerefer=='')">{{product.price | currency:'INR':'symbol-narrow'}}</ng-container>
+                                <ng-container *ngIf="(product.flag=='')&&(product.pricerefer=='')">{{product.price | persianCurrency }}</ng-container>
                                 <ng-container *ngIf="product.flag==0;else one">
-                                {{product.pricerefer | currency:'INR':'symbol-narrow'}}
+                                {{product.pricerefer | persianCurrency }}
                                     </ng-container>
                                 <ng-template #one>
-                                    <span><del class="del">{{product.price | currency:'INR':'symbol-narrow'}}</del> {{product.pricerefer | currency:'INR':'symbol-narrow'}}</span>
+                                    <span><del class="del">{{product.price | persianCurrency }}</del> {{product.pricerefer | persianCurrency }}</span>
                                 </ng-template>
                             </p>
                         </div>
@@ -105,12 +105,12 @@
                             <div fxLayout="row" fxLayoutAlign="space-between center" class="prices">
                                 <div fxLayout="column" fxLayoutAlign="center start">
                                     <p class="new-price">
-                                        <ng-container *ngIf="(product.flag=='')&&(product.pricerefer=='')">{{product.price | currency:'INR':'symbol-narrow'}}</ng-container>
+                                        <ng-container *ngIf="(product.flag=='')&&(product.pricerefer=='')">{{product.price | persianCurrency }}</ng-container>
                                         <ng-container *ngIf="product.flag==0;else one">
-                                            {{product.pricerefer | currency:'INR':'symbol-narrow'}}
+                                            {{product.pricerefer | persianCurrency }}
                                         </ng-container>
                                         <ng-template #one>
-                                            <span><del class="del">{{product.price | currency:'INR':'symbol-narrow'}}</del> {{product.pricerefer | currency:'INR':'symbol-narrow'}}</span>
+                                            <span><del class="del">{{product.price | persianCurrency }}</del> {{product.pricerefer | persianCurrency }}</span>
                                         </ng-template>
                                     </p>
                                 </div>
