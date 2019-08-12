@@ -46,10 +46,10 @@
 
         <h2>{{(productDetail.productDetails$ | async)?.name}}</h2>
         <div class="py-1 lh">
-            <p><span class="text-muted fw-500">Category: </span><span
+            <p><span class="text-muted fw-500">{{'products.Category' | translate}}: </span><span
                     *ngIf="(productDetail.productDetails$ | async)?.Category[0]">{{(productDetail.productDetails$ | async)?.Category[0].categoryName}}</span>
             </p>
-            <p><span class="text-muted fw-500">Availibility: </span><span>Available</span></p>
+            <p><span class="text-muted fw-500">{{'products.Availibility' | translate}}: </span><span>Available</span></p>
         </div>
         <div class="py-1">
         </div>
