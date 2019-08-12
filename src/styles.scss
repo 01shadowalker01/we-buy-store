@@ -6,6 +6,7 @@
 @import "default/theme/styles/base";
 @import "default/theme/styles/theme";
 @import "assets/fonts/Vazir/font.css";
+@import "assets/fonts/Nunito/font-face.css";
 
 *,
 body,
@@ -18,8 +19,9 @@ form,
 .mat-raised-button,
 .mat-mini-fab,
 .mat-table,
-.mat-tooltip {
-  font-family: Vazir, Arial, Helvetica, sans-serif;
+.mat-tooltip,
+.mat-menu-item {
+  font-family: Nunito, Vazir, sans-serif;
 }
 
 .app.green {
