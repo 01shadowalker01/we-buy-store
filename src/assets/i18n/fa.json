@@ -153,6 +153,13 @@
     "Brands": "مارک",
     "Condition": "وضعیت"
   },
+  "ProductDetails": {
+    "BONUSPLUS": "به همراه جایزه",
+    "FreeShipping": "حمل و نقل رایگان",
+    "MoneyBackGuarantee": "تضمین بازگشت مبلغ",
+    "OnlineSupport": "پشتیبانی آنلاین",
+    "Description": "توضیحات"
+  },
   "cart": {
     "YOUHAVENOITEMSCART": "سبد خرید شما خالی است",
     "ContinueShopping": "ادامه خرید",

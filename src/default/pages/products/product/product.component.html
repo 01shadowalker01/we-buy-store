@@ -58,7 +58,7 @@
 
             <ng-container
                     *ngIf="(((productDetail.productDetails$ | async)?.flag)=='')&&(((productDetail.productDetails$ | async)?.pricerefer) =='')">
-                {{((productDetail.productDetails$ | async)?.price) | currency:'INR':'symbol-narrow'}}
+                {{((productDetail.productDetails$ | async)?.price) | currency:'IRR':'code'}}
             </ng-container>
             <ng-container *ngIf="((productDetail.productDetails$ | async)?.flag)==0;else one">
                 {{((productDetail.productDetails$ | async)?.pricerefer) | currency:'INR':'symbol-narrow'}}
@@ -93,7 +93,7 @@
                 <mat-card class="light-block" fxLayout="row" fxLayoutAlign="start center">
                     <mat-icon class="mat-icon-xlg text-muted m-0">card_giftcard</mat-icon>
                     <div class="content">
-                        <p>BONUS PLUS</p>
+                        <p>{{'ProductDetails.BONUSPLUS' | translate}}</p>
                         <span class="text-muted m-0">Make fun of shopping and collect bonuses</span>
                     </div>
                 </mat-card>
@@ -102,7 +102,7 @@
                 <mat-card class="light-block" fxLayout="row" fxLayoutAlign="start center">
                     <mat-icon class="mat-icon-xlg text-muted m-0">local_shipping</mat-icon>
                     <div class="content">
-                        <p>FREE SHIPPING</p>
+                        <p>{{'ProductDetails.FreeShipping' | translate}}</p>
                         <span class="text-muted m-0">Free shipping on all orders over $99</span>
                     </div>
                 </mat-card>
@@ -111,7 +111,7 @@
                 <mat-card class="light-block" fxLayout="row" fxLayoutAlign="start center">
                     <mat-icon class="mat-icon-xlg text-muted m-0">monetization_on</mat-icon>
                     <div class="content">
-                        <p>MONEY BACK GUARANTEE</p>
+                        <p>{{'ProductDetails.MoneyBackGuarantee' | translate}}</p>
                         <span class="text-muted m-0">30 Days money return guarantee</span>
                     </div>
                 </mat-card>
@@ -120,7 +120,7 @@
                 <mat-card class="light-block" fxLayout="row" fxLayoutAlign="start center">
                     <mat-icon class="mat-icon-xlg text-muted m-0">history</mat-icon>
                     <div class="content">
-                        <p>ONLINE SUPPORT 24/7</p>
+                        <p>{{'ProductDetails.OnlineSupport' | translate}}</p>
                         <span class="text-muted m-0">Call us: (+100) 123 456 7890</span>
                     </div>
                 </mat-card>
@@ -134,7 +134,7 @@
     <div fxFlex="100" fxFlex.gt-md="78" fxFlex.md="74">
         <mat-card>
             <mat-tab-group [@.disabled]="true" [selectedIndex]="0">
-                <mat-tab label="Description">
+                <mat-tab label="{{'ProductDetails.Description' | translate}}">
                     <div class="full-desc lh">
                         <p [innerHtml]='(productDetail.productDetails$ | async)?.description'></p>
                     </div>
