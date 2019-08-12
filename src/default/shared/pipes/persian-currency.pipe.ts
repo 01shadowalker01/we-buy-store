@@ -6,11 +6,14 @@ import { CurrencyPipe } from '@angular/common';
 })
 export class PersianCurrencyPipe implements PipeTransform {
   constructor(private currencyPipe: CurrencyPipe) {}
-  transform(value: string, args?: any): string {
-    let tmp = this.currencyPipe
-      .transform(value, "IRR")
-    if (tmp){
-      return tmp.replace("IRR", "تومان");
+  transform(value: string, currencyCode: any = "IRR"): string {
+    if (currencyCode == "IRR") {
+      let tmp = this.currencyPipe.transform(value, currencyCode);
+      if (tmp) {
+        return tmp.replace(currencyCode, "تومان");
+      }
+    } else {
+      return this.currencyPipe.transform(value, currencyCode);
     }
   }
 }
