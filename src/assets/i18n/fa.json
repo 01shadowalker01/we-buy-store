@@ -214,11 +214,11 @@
     "Zip/PostalCode": "Zip/Postal Code",
     "ZipCode": "Zip/Postal Code",
     "PlaceOrder": "سفارش",
-    "YourItems": "اقلام خود را",
+    "YourItems": "کالاهای شما",
     "viewCart": "مشاهده سبد خرید",
     "Total": "مجموع",
     "ProceedToCheckout": "اقدام به پرداخت",
-    "Congratulation!": "تبریک! سفارش شما پردازش شده است",
+    "Congratulation!": "تبریک! سفارش شما با موفقیت ثبت شد",
     "ReturnToShop": "بازگشت به فروشگاه"
   },
   "authentication": {
