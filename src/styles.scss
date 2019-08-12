@@ -7,16 +7,18 @@
 @import "default/theme/styles/theme";
 @import "assets/fonts/Vazir/font.css";
 
+*,
 body,
 h1,
 h2,
 h3,
 input,
+form,
 .mat-button,
 .mat-raised-button,
 .mat-mini-fab,
-form,
-.mat-table {
+.mat-table,
+.mat-tooltip {
   font-family: Vazir;
 }
 
