@@ -18,8 +18,9 @@
               class="top-menu-dropdown cart-dropdown">
                         <span (mouseleave)="cartMenuTrigger.closeMenu()" class="d-block">
                             <div fxLayout="row" fxLayoutAlign="space-between center" class="text-muted">
-                                <b><span>{{cartSandbox.cartlistCount$ | async}} {{'Shared.ITEM'|translate}}<span
-                                        *ngIf="(cartSandbox.cartlistCount$ | async) > 1">S</span></span></b>
+                                <b><span>{{cartSandbox.cartlistCount$ | async}} {{'Shared.ITEM'|translate}}
+                                    <!-- <span *ngIf="(cartSandbox.cartlistCount$ | async) > 1">S</span> -->
+                                </span></b>
                                 <b><a [routerLink]="['/cart']"
                                       class="text-muted">{{'Shared.VIEWCART'|translate}}</a></b>
                             </div>
