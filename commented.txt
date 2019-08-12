@@ -21,3 +21,8 @@ Author: saeed <s>
 Date:   Mon Aug 12 14:07:14 2019 +0430
 
     car 'S' commented
+5) commit e9e80b2b3f7eaf4dc781f2dab2430bfd6740e01a (HEAD -> master, origin/master, origin/HEAD, Saeed-12082019-RTLandTranslate)
+Author: saeed <s>
+Date:   Mon Aug 12 19:14:31 2019 +0430
+
+    cms section commented (admin-page)
