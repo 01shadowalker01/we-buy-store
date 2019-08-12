@@ -3,8 +3,21 @@ Author: saeed <s>
 Date:   Fri Aug 9 16:04:05 2019 +0430
 
     change language commented
+
 2) commit 3d5957b9dbe2878546525cc5ac453d32846c8eb3
 Author: saeed <s>
 Date:   Fri Aug 9 16:03:27 2019 +0430
 
     tppest tool-bar commented
+
+3) commit a26d11926fb8a1e7fed47b4815396641a8f3d00a
+Author: saeed <s>
+Date:   Mon Aug 12 13:41:09 2019 +0430
+
+    share in product details commented
+
+4) commit 90617ed136720a17726d76f6aa7ef2eb09af55a9 (HEAD -> Saeed-12082019-ProductDetail)
+Author: saeed <s>
+Date:   Mon Aug 12 14:07:14 2019 +0430
+
+    car 'S' commented
