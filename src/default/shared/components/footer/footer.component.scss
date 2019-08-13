@@ -29,6 +29,7 @@
     }
     .col-title{
         font-weight: 600;
+        margin-bottom: .5rem;
     }
     .mat-icon{
         height: 21px;
@@ -36,6 +37,7 @@
     }
     .link{
         text-decoration: none;
+        margin-left: 1rem;
         &:hover{
             text-decoration: underline;
         }
