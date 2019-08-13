@@ -20,11 +20,11 @@
       <div class="mat-cell">{{order.total | persianCurrency }}</div>
       <div class="mat-cell">
         <div class="p-1 actions">          
-          <button mat-mini-fab color="primary" matTooltip="View" [routerLink]="['/account/order-detail',order.orderId]">
+          <button mat-mini-fab color="primary" matTooltip="مشاهده" [routerLink]="['/account/order-detail',order.orderId]">
               <mat-icon>remove_red_eye</mat-icon>
           </button>
 
-            <button mat-mini-fab color="warn" matTooltip="View invoice" class="btn-invoice" (click)="downloadInvoice(order.orderId);isRecipt=i">
+            <button mat-mini-fab color="warn" matTooltip="مشاهده ی فاکتور" class="btn-invoice" (click)="downloadInvoice(order.orderId);isRecipt=i">
                 <i *ngIf="(accountSandbox.orderHistoryDetailLoading$ | async) && isRecipt === i" class="fa fa-spinner fa-spin" style="font-size:24px"></i>
                 <mat-icon *ngIf="!(accountSandbox.orderHistoryDetailLoading$ | async) || isRecipt !== i">receipt</mat-icon>
           </button>
