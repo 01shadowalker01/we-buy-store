@@ -211,7 +211,7 @@
     "Address": "آدرس (خیابان آپارتمان,سوئیت,واحد,و غیره)",
     "AddressLine1": "آدرس خط 1",
     "City": "شهر",
-    "State/Province": "وزارت امور خارجه/استان",
+    "State/Province": "استان",
     "Zip/PostalCode": "Zip/Postal Code",
     "ZipCode": "Zip/Postal Code",
     "PlaceOrder": "سفارش",

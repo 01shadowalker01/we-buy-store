@@ -59,19 +59,19 @@
             </mat-error>
             <ng-container >
                 <div class="newaddress">
-                <div class="flex custom-field mb-2">
-                    <input type="text" formControlName="address" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/"
-                           placeholder="{{'checkout.Address'|translate}} "
-                           [ngClass]="{'has-error': !checkoutForm.controls['address'].valid && submitted }">
-                    <mat-error *ngIf="checkoutForm.controls['address'].hasError('required')&&submitted">
-                        {{'Error.AddressIsRequired'|translate}}
-                    </mat-error>
-                </div>
-                <div class="flex custom-field mb-2">
+                <!-- <div class="flex custom-field mb-2">
                     <input type="text" formControlName="addressLine"
                            placeholder="{{'checkout.AddressLine1'|translate}}">
-                </div>
+                </div> -->
                 <div class="flex custom-field mb-2">
+                    <div class="width-inline">
+                        <input type="text" formControlName="state" placeholder="{{'checkout.State/Province'|translate}}"
+                                [ngClass]="{'has-error': !checkoutForm.controls['state'].valid && submitted}">
+                        <mat-error *ngIf="checkoutForm.controls['state'].hasError('required')&&submitted">
+                            {{'Error.StateIsRequired'|translate}}
+                        </mat-error>
+    
+                    </div>
                     <div class="width-inline">
                         <input type="text" formControlName="city" placeholder="{{'checkout.City'|translate}}"
                                [ngClass]="{'has-error': !checkoutForm.controls['city'].valid && submitted}">
@@ -81,22 +81,22 @@
                     </div>
                 </div>
                 <div class="flex custom-field mb-2">
-                    <div class="width-inline">
-                        <input type="text" formControlName="state" placeholder="{{'checkout.State/Province'|translate}}"
-                               [ngClass]="{'has-error': !checkoutForm.controls['state'].valid && submitted}">
-                        <mat-error *ngIf="checkoutForm.controls['state'].hasError('required')&&submitted">
-                            {{'Error.StateIsRequired'|translate}}
-                        </mat-error>
-
-                    </div>
+                    <input type="text" formControlName="address" ng-pattern="/^[a-zA-Z. ]*[a-zA-Z]{1,60}$/"
+                           placeholder="{{'checkout.Address'|translate}} "
+                           [ngClass]="{'has-error': !checkoutForm.controls['address'].valid && submitted }">
+                    <mat-error *ngIf="checkoutForm.controls['address'].hasError('required')&&submitted">
+                        {{'Error.AddressIsRequired'|translate}}
+                    </mat-error>
+                </div>
+                <!-- <div class="flex custom-field mb-2">
                     <div class="width-inline">
                         <input type="text" formControlName="zip" placeholder="{{'checkout.ZipCode'|translate}}"
                                [ngClass]="{'has-error': !checkoutForm.controls['zip'].valid && submitted}">
                         <mat-error *ngIf="checkoutForm.controls['zip'].hasError('required')&&submitted">
                             {{'Error.ZipIsRequired'|translate}}
                         </mat-error>
-                    </div>
-                </div>
+                    </div> 
+                </div> -->
                 </div>
             </ng-container>
         </form>
