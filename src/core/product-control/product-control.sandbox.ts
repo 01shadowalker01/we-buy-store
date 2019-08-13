@@ -128,7 +128,7 @@ export class ProductControlSandbox {
         const availableData: any = {};
         availableData.options = param.totalOptions;
         cartParams.totalPrice = this.productTotal;
-        this.snackBar.open('Product ' + item.name + ' is successfully added to cart', '×', {
+        this.snackBar.open('کالای ' + item.name + ' با موفقیت به سبد افزوده شد', '×', {
             panelClass: 'success',
             verticalPosition: 'top',
             horizontalPosition: 'right',
