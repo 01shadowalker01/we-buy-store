@@ -1,6 +1,6 @@
 <mat-card fxLayout="row wrap" fxLayoutAlign="space-between">
     <div fxFlex="100" fxFlex.gt-sm="50" class="p-2 billing-address">
-        <h2 class="text-dark">Billing Address</h2>
+        <h2 class="text-dark">{{'checkout.BillingAddress'|translate}}</h2>
         <form [formGroup]="checkoutForm" novalidate>
             <div class="flex custom-field mb-2">
                 <input type="text" formControlName="firstName" placeholder="{{'checkout.FirstName'|translate}}"
@@ -42,7 +42,7 @@
                 <div class="width-inline">
                     <select formControlName="country"
                             [ngClass]="{'has-error': !checkoutForm.controls['country'].valid && submitted}">
-                        <option value=''>--Select Country--</option>
+                        <option value=''>--{{'checkout.SelectCountry'|translate}}--</option>
                         <option *ngFor="let list of listsSandbox.countryList$ | async" [value]="list.countryId">
                             {{list.name}}
                         </option>
