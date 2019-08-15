@@ -127,7 +127,7 @@
         </div>
         <div *ngIf="(listSandbox.productLoaded$ | async) && (listSandbox.productlist$ | async)?.length == 0" fxLayout="row wrap">
             <div fxFlex="100" fxFlex.gt-xs="90" class="p-2">
-                <p style="margin-left: 50%;margin-top:10%;color:gray">No Results Found</p>
+                <p style="margin-left: 50%;margin-top:10%;color:gray">محصولی یافت نشد!</p>
             </div>
         </div>
         <div *ngIf="(listSandbox.productlist$ | async)?.length > 0" fxLayout="row wrap">
