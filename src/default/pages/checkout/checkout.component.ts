@@ -33,16 +33,16 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     public checkoutForm: FormGroup;
     public firstName: FormControl;
     public lastName: FormControl;
-    public company: FormControl;
+    // public company: FormControl;
     public email: FormControl;
     public phone: FormControl;
     public country: FormControl;
     public city: FormControl;
     public state: FormControl;
-    public zip: FormControl;
-    public zipCodes: any;
+    // public zip: FormControl;
+    // public zipCodes: any;
     public address: FormControl;
-    public addressLine: FormControl;
+    // public addressLine: FormControl;
     public checked: boolean;
     // validation
     public submitted = false;
@@ -102,22 +102,22 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         this.phone = new FormControl('', Validators.compose([Validators.required]));
         this.city = new FormControl('', Validators.required);
         this.state = new FormControl('', Validators.required);
-        this.zip = new FormControl('', Validators.required);
+        // this.zip = new FormControl('', Validators.required);
         this.address = new FormControl('', Validators.required);
-        this.addressLine = new FormControl('');
+        // this.addressLine = new FormControl('');
 
         this.checkoutForm = this.formBuilder.group({
             firstName: this.firstName,
             lastName: this.lastName,
-            company: this.company,
+            // company: this.company,
             email: this.email,
             phone: this.phone,
             country: this.country,
             city: this.city,
             state: this.state,
-            zip: this.zip,
+            // zip: this.zip,
             address: this.address,
-            addressLine: this.addressLine,
+            // addressLine: this.addressLine,
         });
     }
 
@@ -126,14 +126,14 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         this.checkoutForm.controls['company'].setValue(param.company);
         this.checkoutForm.controls['city'].setValue(param.city);
         this.checkoutForm.controls['state'].setValue(param.state);
-        if (typeof param.postcode === 'number') {
-            this.zipCodes = parseInt(param.postcode, 10);
-            this.checkoutForm.controls['zip'].setValue(this.zipCodes);
-        } else {
-            this.checkoutForm.controls['zip'].setValue(param.postcode);
-        }
+        // if (typeof param.postcode === 'number') {
+        //     this.zipCodes = parseInt(param.postcode, 10);
+        //     this.checkoutForm.controls['zip'].setValue(this.zipCodes);
+        // } else {
+        //     this.checkoutForm.controls['zip'].setValue(param.postcode);
+        // }
         this.checkoutForm.controls['address'].setValue(param.address1);
-        this.checkoutForm.controls['addressLine'].setValue(param.address2);
+        // this.checkoutForm.controls['addressLine'].setValue(param.address2);
     }
 
     // editing billing form(from get profile api)
@@ -157,7 +157,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     public placeOrder(productDetails) {
         this.submitted = true;
         if (productDetails.length === 0) {
-            this.snackBar.open('Add items to place order', '×', {
+            this.snackBar.open('ابتدا باید محصول اضافه کنید', '×', {
                 panelClass: 'error',
                 verticalPosition: 'top',
                 horizontalPosition: 'right',
@@ -168,6 +168,9 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         if (!this.checkoutForm.valid) {
             return;
         }
+        this.checkoutForm.value["company"] = "a"
+        this.checkoutForm.value["zip"] = "a"
+        this.checkoutForm.value["addressLine"] = "a"
         const params = this.checkoutForm.value;
         // this.optionss(productDetails);
         params.productDetail = productDetails;

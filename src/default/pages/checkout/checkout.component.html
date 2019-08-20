@@ -108,21 +108,12 @@
           </mat-error>
         </div>
       </div>
-      <mat-error
-        *ngIf="
-          checkoutForm.controls['address'].hasError('required') &&
-          submitted &&
-          newAddress
-        "
-      >
-        {{ "Error.AddressIsRequired" | translate }}
-      </mat-error>
       <ng-container>
         <div class="newaddress">
           <!-- <div class="flex custom-field mb-2">
-                    <input type="text" formControlName="addressLine"
-                           placeholder="{{'checkout.AddressLine1'|translate}}">
-                </div> -->
+                      <input type="text" formControlName="addressLine"
+                             placeholder="{{'checkout.AddressLine1'|translate}}">
+                  </div> -->
           <div class="flex custom-field mb-2">
             <div class="width-inline">
               <input
@@ -183,14 +174,14 @@
             </mat-error>
           </div>
           <!-- <div class="flex custom-field mb-2">
-                    <div class="width-inline">
-                        <input type="text" formControlName="zip" placeholder="{{'checkout.ZipCode'|translate}}"
-                               [ngClass]="{'has-error': !checkoutForm.controls['zip'].valid && submitted}">
-                        <mat-error *ngIf="checkoutForm.controls['zip'].hasError('required')&&submitted">
-                            {{'Error.ZipIsRequired'|translate}}
-                        </mat-error>
-                    </div> 
-                </div> -->
+                      <div class="width-inline">
+                          <input type="text" formControlName="zip" placeholder="{{'checkout.ZipCode'|translate}}"
+                                 [ngClass]="{'has-error': !checkoutForm.controls['zip'].valid && submitted}">
+                          <mat-error *ngIf="checkoutForm.controls['zip'].hasError('required')&&submitted">
+                              {{'Error.ZipIsRequired'|translate}}
+                          </mat-error>
+                      </div> 
+                  </div> -->
         </div>
       </ng-container>
     </form>
