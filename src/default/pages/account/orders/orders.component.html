@@ -24,10 +24,10 @@
               <mat-icon>remove_red_eye</mat-icon>
           </button>
 
-            <button mat-mini-fab color="warn" matTooltip="مشاهده ی فاکتور" class="btn-invoice" (click)="downloadInvoice(order.orderId);isRecipt=i">
+            <!-- <button mat-mini-fab color="warn" matTooltip="مشاهده ی فاکتور" class="btn-invoice" (click)="downloadInvoice(order.orderId);isRecipt=i">
                 <i *ngIf="(accountSandbox.orderHistoryDetailLoading$ | async) && isRecipt === i" class="fa fa-spinner fa-spin" style="font-size:24px"></i>
                 <mat-icon *ngIf="!(accountSandbox.orderHistoryDetailLoading$ | async) || isRecipt !== i">receipt</mat-icon>
-          </button>
+          </button> -->
         </div>
       </div>      
     </div>
