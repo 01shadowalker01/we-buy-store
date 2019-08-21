@@ -25,7 +25,7 @@ export class AccountComponent implements OnInit , AfterViewInit {
     public links = [
         {name: 'داشبورد', href: 'dashboard', icon: 'dashboard'},
         {name: 'اطلاعات حساب', href: 'information', icon: 'info'},
-        {name: 'آدرس ها', href: 'addresses', icon: 'location_on'},
+        // {name: 'آدرس ها', href: 'addresses', icon: 'location_on'},
         {name: 'لیست سفارش ها', href: 'orders', icon: 'add_shopping_cart'},
         {name: 'خروج', href: '/auth', icon: 'power_settings_new' },
     ];

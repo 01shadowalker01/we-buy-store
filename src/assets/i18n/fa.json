@@ -7,7 +7,7 @@
   "ErrorNotificationTitle": "خطا",
   "InfoNotificationTitle": "اطلاعات",
   "WarningNotificationTitle": "هشدار",
-  "SaveBtn": "صرفه جویی در",
+  "SaveBtn": "ذخیره کردن",
   "EditBtn": "ویرایش",
   "CancelBtn": "لغو",
   "BackBtn": "بازگشت",
@@ -32,7 +32,7 @@
   "Jobcard": {
     "Jobcard_list": "Jobcard لیست",
     "Submit": "ارسال",
-    "Save": "صرفه جویی در",
+    "Save": "ذخیره کردن",
     "Cancel": "لغو"
   },
   "Dashboard": { "Stock": "سهام" },
@@ -101,7 +101,7 @@
     "PasswordChange": "تغییر رمز عبور ",
     "CurrentPassword": "رمز عبور فعلی",
     "NewPassword": "رمز عبور جدید",
-    "Save": "صرفه جویی در",
+    "Save": "ذخیره کردن",
     "SaveAddress": "ذخیره آدرس",
     "Change": "تغییر",
     "Hello": "سلام",
