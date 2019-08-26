@@ -116,7 +116,23 @@
                   </div> -->
           <div class="flex custom-field mb-2">
             <div class="width-inline">
-              <input
+                <select
+                formControlName="state"
+                [ngClass]="{
+                  'has-error': !checkoutForm.controls['state'].valid && submitted
+                }"
+              >
+                <option value=""
+                  >--{{ "checkout.SelectProvince" | translate }}--</option
+                >
+                <option
+                  *ngFor="let city of iranCities"
+                  [value]="city.Fname"
+                >
+                  {{ city.Fname }}
+                </option>
+              </select>
+              <!-- <input
                 type="text"
                 formControlName="state"
                 placeholder="{{ 'checkout.State/Province' | translate }}"
@@ -124,7 +140,7 @@
                   'has-error':
                     !checkoutForm.controls['state'].valid && submitted
                 }"
-              />
+              /> -->
               <mat-error
                 *ngIf="
                   checkoutForm.controls['state'].hasError('required') &&

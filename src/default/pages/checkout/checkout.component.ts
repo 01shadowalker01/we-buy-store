@@ -18,6 +18,7 @@ import {AccountSandbox} from '../../../core/account/account.sandbox';
 import {ProductControlService} from '../../../core/product-control/product-control.service';
 import {CommonSandbox} from '../../../core/common/common.sandbox';
 import {Subscription} from 'rxjs';
+import { iranCitiesList } from './iran-cities';
 
 
 @Component({
@@ -29,6 +30,8 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     // decorator
     @ViewChild('horizontalStepper') horizontalStepper: MatStepper;
     @ViewChild('verticalStepper') verticalStepper: MatStepper;
+    //
+    public iranCities = iranCitiesList;
     // reactive form
     public checkoutForm: FormGroup;
     public firstName: FormControl;
@@ -171,7 +174,9 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         this.checkoutForm.value["company"] = "a"
         this.checkoutForm.value["zip"] = "a"
         this.checkoutForm.value["addressLine"] = "a"
-        this.checkoutForm.value["country"] = "101"        
+        this.checkoutForm.value["country"] = "101";
+        console.log(this.checkoutForm.value);
+               
         const params = this.checkoutForm.value;
         // this.optionss(productDetails);
         params.productDetail = productDetails;
