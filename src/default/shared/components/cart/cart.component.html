@@ -7,10 +7,10 @@
         <div fxLayout="column" fxLayoutAlign="center center" fxShow="false" fxShow.gt-xs
              class="top-cart">
             <!-- <span>{{'Shared.ShoppingCart'|translate}}</span> -->
-            <span *ngIf="(cartSandbox.cartlistCount$ | async) > 0">{{cartSandbox.cartlistCount$ | async}} item<span
-                    *ngIf="(cartSandbox.cartlistCount$ | async) > 1">s</span> -
-                                <span>{{(cartSandbox.totalCartPrice$ | async) | persianCurrency  }}</span>
-                            </span>
+            <span *ngIf="(cartSandbox.cartlistCount$ | async) > 0">{{cartSandbox.cartlistCount$ | async}} کالا
+                <!-- <span *ngIf="(cartSandbox.cartlistCount$ | async) > 1">s</span> -->
+                 - <span>{{(cartSandbox.totalCartPrice$ | async) | persianCurrency  }}</span>
+            </span>
         </div>
         <mat-icon class="mat-icon-sm">arrow_drop_down</mat-icon>
     </button>
