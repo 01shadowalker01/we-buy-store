@@ -11,7 +11,7 @@
                     (mouseleave)="onMouseLeave($event)"/>
         </mat-card>
 
-        <div class="small-carousel">
+        <!-- <div class="small-carousel">
             <div class="swiper-container" [swiper]="config">
                 <div class="swiper-wrapper">
                     <div *ngFor="let image of (productDetail.productDetails$ | async)?.productImage"
@@ -33,7 +33,7 @@
                     <mat-icon>keyboard_arrow_right</mat-icon>
                 </button>
             </div>
-        </div>
+        </div> -->
     </div>
     <div fxFlex="100" fxFlex.gt-md="45" fxFlex.md="55" ngClass.gt-sm="px-3 m-0" ngClass.sm="mt-2" ngClass.xs="mt-2">
         <div #zoomViewer fxShow="false" fxShow.gt-md *ngIf="zoomImage">
