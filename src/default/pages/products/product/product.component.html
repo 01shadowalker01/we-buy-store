@@ -49,7 +49,7 @@
             <p><span class="text-muted fw-500">{{'products.Category' | translate}}: </span><span
                     *ngIf="(productDetail.productDetails$ | async)?.Category[0]">{{(productDetail.productDetails$ | async)?.Category[0].categoryName}}</span>
             </p>
-            <p><span class="text-muted fw-500">{{'products.Availibility' | translate}}: </span><span>Available</span></p>
+            <p><span class="text-muted fw-500">{{'products.Availibility' | translate}}: </span><span>موجود</span></p>
         </div>
         <div class="py-1">
         </div>
@@ -95,7 +95,7 @@
                     <mat-icon class="mat-icon-xlg text-muted m-0">card_giftcard</mat-icon>
                     <div class="content">
                         <p>{{'ProductDetails.BONUSPLUS' | translate}}</p>
-                        <span class="text-muted m-0">Make fun of shopping and collect bonuses</span>
+                        <span class="text-muted m-0">{{'home.MakeFunOfShopping' | translate}}</span>
                     </div>
                 </mat-card>
             </div>
@@ -104,7 +104,7 @@
                     <mat-icon class="mat-icon-xlg text-muted m-0">local_shipping</mat-icon>
                     <div class="content">
                         <p>{{'ProductDetails.FreeShipping' | translate}}</p>
-                        <span class="text-muted m-0">Free shipping on all orders over $99</span>
+                        <span class="text-muted m-0">{{'home.FreeShipping$99' | translate}}</span>
                     </div>
                 </mat-card>
             </div>
@@ -113,7 +113,7 @@
                     <mat-icon class="mat-icon-xlg text-muted m-0">monetization_on</mat-icon>
                     <div class="content">
                         <p>{{'ProductDetails.MoneyBackGuarantee' | translate}}</p>
-                        <span class="text-muted m-0">30 Days money return guarantee</span>
+                        <span class="text-muted m-0">{{'home.30DaysMoneyGuarantee' | translate}}</span>
                     </div>
                 </mat-card>
             </div>
@@ -122,7 +122,7 @@
                     <mat-icon class="mat-icon-xlg text-muted m-0">history</mat-icon>
                     <div class="content">
                         <p>{{'ProductDetails.OnlineSupport' | translate}}</p>
-                        <span class="text-muted m-0">Call us: (+100) 123 456 7890</span>
+                        <span class="text-muted m-0">{{ 'home.CallUs' | translate }}</span>
                     </div>
                 </mat-card>
             </div>
