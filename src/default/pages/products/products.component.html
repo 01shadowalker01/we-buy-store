@@ -12,7 +12,7 @@
             <button *ngIf="!sidenavOpen" mat-icon-button (click)="sidenav.toggle()">
                 <mat-icon>more_vert</mat-icon>
             </button>
-            <div>
+            <!-- <div>
                 <a mat-button [matMenuTriggerFor]="sortMenu" #sortMenuTrigger="matMenuTrigger">
                     {{sortData}}
                     <mat-icon class="mat-icon-sm caret">arrow_drop_down</mat-icon>
@@ -24,7 +24,7 @@
                         </button>
                     </span>
                 </mat-menu>
-            </div>
+            </div> -->
             <div>
                 <button mat-icon-button (click)="changeViewType('list', 100)">
                     <mat-icon>view_list</mat-icon>
