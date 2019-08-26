@@ -36,7 +36,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     // public company: FormControl;
     public email: FormControl;
     public phone: FormControl;
-    public country: FormControl;
+    // public country: FormControl;
     public city: FormControl;
     public state: FormControl;
     // public zip: FormControl;
@@ -97,7 +97,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
     initCheckoutForm() {
         this.firstName = new FormControl('', Validators.required);
         this.lastName = new FormControl('', Validators.required);
-        this.country = new FormControl('', Validators.required);
+        // this.country = new FormControl('', Validators.required);
         this.email = new FormControl('', Validators.compose([Validators.required, emailValidator]));
         this.phone = new FormControl('', Validators.compose([Validators.required]));
         this.city = new FormControl('', Validators.required);
@@ -112,7 +112,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
             // company: this.company,
             email: this.email,
             phone: this.phone,
-            country: this.country,
+            // country: this.country,
             city: this.city,
             state: this.state,
             // zip: this.zip,
@@ -171,6 +171,7 @@ export class CheckoutComponent implements OnInit, OnDestroy {
         this.checkoutForm.value["company"] = "a"
         this.checkoutForm.value["zip"] = "a"
         this.checkoutForm.value["addressLine"] = "a"
+        this.checkoutForm.value["country"] = "101"        
         const params = this.checkoutForm.value;
         // this.optionss(productDetails);
         params.productDetail = productDetails;
