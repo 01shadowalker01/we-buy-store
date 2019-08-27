@@ -70,7 +70,7 @@
     "Price": "قیمت",
     "Email": "ایمیل",
     "Name": "نام",
-    "SignIn.": "ثبت نام در",
+    "SignIn.": "ثبت نام",
     "ShopNow": "خرید محصول",
     "Status": "وضعیت",
     "Date": "تاریخ",
@@ -224,7 +224,7 @@
     "ReturnToShop": "بازگشت به فروشگاه"
   },
   "authentication": {
-    "SignIn.": "ثبت نام",
+    "SignIn.": "ورود به حساب کاربری",
     "Email": "ایمیل",
     "Password": "رمز عبور",
     "SignInWithOneClick": "یا ثبت نام با یک کلیک",
