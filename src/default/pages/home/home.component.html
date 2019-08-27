@@ -4,7 +4,7 @@
 
     <mat-tab-group mat-stretch-tabs>
 
-        <mat-tab label="Featured Product">
+        <mat-tab label="محصولات خاص">
             <app-products-carousel [products]="listSandbox.featuredList$ | async"></app-products-carousel>
         </mat-tab>
     </mat-tab-group>
@@ -16,7 +16,7 @@
 
     <mat-tab-group mat-stretch-tabs>
 
-        <mat-tab label="Today Deals">
+        <mat-tab label="پیشنهاد ویژه">
             <app-products-carousel [products]="listSandbox.todayDealList$ | async"></app-products-carousel>
         </mat-tab>
     </mat-tab-group>
